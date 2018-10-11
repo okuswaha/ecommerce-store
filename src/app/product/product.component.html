@@ -1,32 +1,21 @@
-<h1>Product {{product.id}} Details</h1>
-<div>
-  <label> id:
-    <input [(ngModel)]="product.id" placeholder="Id">
-  </label>
-</div>
-<div>
-  <label> sku:
-    <input [(ngModel)]="product.sku" placeholder="sku">
-  </label>
-</div>
-<div>
-  <label> productName:
-    <input [(ngModel)]="product.productName" placeholder="productName">
-  </label>
-</div>
-<div>
-  <label> productDesc:
-    <input [(ngModel)]="product.productDesc" placeholder="productDesc">
-  </label>
-</div>
-<div>
-  <label> categoryId:
-    <input [(ngModel)]="product.categoryId" placeholder="categoryId">
-  </label>
-</div>
-<div>
-  <label> price:
-    <input [(ngModel)]="product.price" placeholder="price">
-  </label>
-</div>
+<h2>My Products </h2>
+<ul class="products">
+  <li [class.selected]="product === selectedProduct" *ngFor="let product of products" (click)="onSelect(product)">
+    <span class="badge"> {{product.sku}}</span> {{product.productName}}
+  </li>
+</ul>
 
+<div *ngIf="selectedProduct">
+  <h2>{{selectedProduct.sku | uppercase }} Details </h2>
+  <div> <span> id : </span> {{selectedProduct.id}}</div>
+  <div>
+    <label> Product Name :
+      <input [(ngModel)]="selectedProduct.productName" placeholder="productName">
+    </label>
+  </div>
+  <div>
+    <label> Product Description :
+      <input [(ngModel)]="selectedProduct.productDesc" placeholder="productDesc">
+    </label>
+  </div>
+</div>

@@ -1,26 +1,15 @@
-<h1>Order {{order.id}} Details</h1>
-<div>
-  <label>id :
-    <input [(ngModel)]="order.id" placeholder="Id">
-  </label>
-</div>
-<div>
-  <label>customerId :
-    <input [(ngModel)]="order.customerId" placeholder="customerId">
-  </label>
-</div>
-<div>
-  <label>orderDate :
-    <input [(ngModel)]="order.orderDate" placeholder="orderDate">
-  </label>
-</div>
-<div>
-  <label>paid :
-    <input [(ngModel)]="order.paid" placeholder="paid">
-  </label>
-</div>
-<div>
-  <label>paidDate :
-    <input [(ngModel)]="order.paidDate" placeholder="paidDate">
-  </label>
+<h2>My Orders</h2>
+<ul class="orders">
+  <li [class.selected]="order === selectedOrder" *ngFor="let order of orders" (click)="onSelect(order)">
+    <span class="badge">{{selectedOrder.id}}</span> {{selectedOrder.orderDate}}
+  </li>
+</ul>
+<div *ngIf="selectedOrder">
+  <h2>{{selectedOrder.id}} details</h2>
+  <div><span>id : </span> {{selectedOrder.id}} </div>
+  <div>
+    <label> Order Date :
+      <input [(ngModel)]="selectedOrder.orderDate" placeholder="orderdate">
+    </label>
+  </div>
 </div>
