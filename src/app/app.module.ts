@@ -8,6 +8,9 @@ import { CustomerComponent } from './customer/customer.component';
 import { ProductComponent } from './product/product.component';
 import { OrderComponent } from './order/order.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { OrderDetailComponent } from './order-detail/order-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
     CustomerComponent,
     ProductComponent,
     OrderComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    CustomerDetailComponent,
+    ProductDetailComponent,
+    OrderDetailComponent
   ],
   imports: [
     BrowserModule,

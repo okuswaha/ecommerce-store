@@ -1,0 +1,8 @@
+"product":{
+  id: 3001,
+  sku: 'qwe-123',
+  productName: 'The Fountain Head',
+  productDesc: 'Amazing book by Ayn Rand',
+  categoryId: 10,
+  price: 15.00
+}
